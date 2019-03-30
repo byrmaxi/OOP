@@ -8,7 +8,7 @@ class shtraf;
 
 class rabotnik
 {
-	friend class shtraf;         // класс друг
+	friend class shtraf;         // РєР»Р°СЃСЃ РґСЂСѓРі
 	private:
 		char name [70] ;
 		int opyt;
@@ -17,25 +17,25 @@ class rabotnik
 		static int num_rab;
 		
 	public:
-		// констуркторы
+		// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹ 
 		rabotnik ();
 		rabotnik (const char * n);
 		rabotnik (const rabotnik &); 
 		
-		//деструтор
+		//РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 		~rabotnik();
 		
-		//перегруженный оператор 
+		//РїРµСЂРµРіСЂСѓР¶РµРЅРЅС‹Р№ РѕРїРµСЂР°С‚РѕСЂ  
 		rabotnik & operator = (const rabotnik & rab);
 		
-		//дружественные функции для перегруженных операторов
+		//РґСЂСѓР¶РµСЃС‚РІРµРЅРЅС‹Рµ С„СѓРЅРєС†РёРё РґР»СЏ РїРµСЂРµРіСѓР¶РµРЅРЅС‹С… РѕРїРµСЂР°С‚РѕСЂРѕРІ 
 		friend bool operator >(const rabotnik &rab1, int n);
 		friend bool operator <(const rabotnik &rab1, const rabotnik & rab2);
 		friend bool operator >(const rabotnik &rab1, const rabotnik & rab2);
 		friend ostream & operator << (ostream & os, const rabotnik & rab);
 		friend istream & operator >> (istream & is, rabotnik & rab) ;
 		
-		// статистическая функция 
+		// СЃС‚Р°С‚РёСЃС‚РёС‡РµСЃРєР°СЏ С„СѓРЅРєС†РёСЏ
 		static int howmany();
 			
 };
@@ -82,8 +82,8 @@ rabotnik::rabotnik(const rabotnik & rab)
 rabotnik::~rabotnik()
 {
 	--num_rab;
-	std::cout<< "Объект удален" << std::endl;
-	std::cout<< "осталось " << howmany() << " объекта(ов)" << std::endl;
+	std::cout<< "РћР±СЉРµРєС‚ СѓРґР°Р»РµРЅ" << std::endl;
+	std::cout<< "РћСЃС‚Р°Р»РѕСЃСЊ " << howmany() << " РѕР±СЉРµРєС‚Р°(РѕРІ)" << std::endl;
 }
 
 
@@ -91,7 +91,7 @@ rabotnik & rabotnik::operator =(const rabotnik & rab)
 {
 	std::strcpy(name, rab.name);
 	opyt=rab.opyt;
-	return *this ;                                        //УКАЗАТЕЛЬ this
+	return *this ;                                        //РЈРљРђР—РђРўР•Р›Р¬ this
 } 
 
 bool operator >(const rabotnik &rab1, int n)
@@ -121,13 +121,13 @@ ostream & operator << (ostream & os, const rabotnik & rab)
 
 istream & operator >> (istream & is, rabotnik & rab) 
 {
-	std::cout<< "Введите имя: ";
+	std::cout<< "Р’РІРµРґРёС‚Рµ РёРјСЏ: ";
 	std::cin >> rab.name ;
-	std::cout<< "Введите его опыт работы: ";
+	std::cout<< "РІРµРґРёС‚Рµ РµРіРѕ РѕРїС‹С‚ СЂР°Р±РѕС‚С‹: ";
 	std::cin >> rab.opyt;
-	std::cout<< "Введите его зарплату: ";
+	std::cout<< "Р’РІРµРґРёС‚Рµ РµРіРѕ Р·Р°СЂРїР»Р°С‚Сѓ: ";
 	std::cin >> rab.zp;
-	std::cout<< "Введите количество прогулов: ";
+	std::cout<< "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРѕРіСѓР»РѕРІ: ";
 	std::cin >> rab.proguly;
 	return is;
 }
@@ -145,10 +145,10 @@ int main()
 
 
    int arsize=0;
-   cout << "Введите количество работников"<< endl;
+   cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРѕС‚СЂСѓРґРЅРёРєРѕРІ"<< endl;
    cin >> arsize;
    rabotnik chel[arsize];
-   cout << "Введите данные о сотрудниках"<< endl;
+   cout << "Р’РІРµРґРёС‚Рµ РґР°РЅРЅС‹Рµ Рѕ СЃРѕС‚СЂСѓРґРЅРёРєР°С…"<< endl;
    for (int i=0; i<arsize; i++)
       {
       	cin >> chel [i];
@@ -184,9 +184,9 @@ int main()
      	sh.vychet (chel[i]);
 	 } 
 		
-	cout << temp << "-работник с самым маленьким опытом" << endl;
-	cout << chel[0]<< "- первый работник по алфавиту"<< endl;
-	cout << "программа использовала " << rabotnik::howmany() << " объекта(ов)" << endl;
+	cout << temp << "-СЃРѕС‚СЂСѓРґРЅРёРє СЃ СЃР°РјРѕР№ РјР°Р»РµРЅСЊРєРѕР№ Р·Р°СЂРїР»Р°С‚РѕР№" << endl;
+	cout << chel[0]<< "- РїРµСЂРІС‹Р№ СЃРѕС‚СЂСѓРґРЅРёРє РїРѕ Р°Р»С„Р°РІРёС‚Сѓ"<< endl;
+	cout << "РџСЂРѕРіСЂР°РјРјР° РёСЃРїРѕР»СЊР·РѕРІР°Р»Р° " << rabotnik::howmany() << " РѕР±СЉРµРєС‚Р°(РѕРІ)" << endl;
 	
 	return 0;
 }
