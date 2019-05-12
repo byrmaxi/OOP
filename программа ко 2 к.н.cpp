@@ -9,7 +9,7 @@ using std::string;
 using std::cin;
  
                                                            
-class rabotnik                                                   // Абстрактный базовый клас
+class rabotnik                                                   // РђР±СЃС‚СЂР°РєС‚РЅС‹Р№ Р±Р°Р·РѕРІС‹Р№ РєР»Р°СЃСЃ
 {      
 	private:
 		char name [70] ;
@@ -19,7 +19,7 @@ class rabotnik                                                   // Абстрактный 
 	public:
 		int show_opyt () {return (opyt);};
 		int show_progyly () {return (proguly);};
-		virtual void zarplata()=0;       // чистая виртуальная функция
+		virtual void zarplata()=0;       // С‡РёСЃС‚Р°СЏ РІРёСЂС‚СѓР°Р»СЊРЅР°СЏ С„СѓРЅРєС†РёСЏ
 		rabotnik ();
 		rabotnik (char n[70], int op, int pr)
 		   {
@@ -35,11 +35,11 @@ class rabotnik                                                   // Абстрактный 
 
 
 
-class sotrudnik_po_kadram: public rabotnik                    //одиночное наследование
+class sotrudnik_po_kadram: public rabotnik                    //РѕРґРёРЅРѕС‡РЅРѕРµ РЅР°СЃР»РµРґРѕРІР°РЅРёРµ
 {
 	private:
 		int spk_zp;
-		class info_pretendenty                               // вложенный класс
+		class info_pretendenty                               // РІР»РѕР¶РµРЅРЅС‹Р№ РєР»Р°СЃСЃ
 		{
 			private:	
 		        string FIO ;
@@ -51,11 +51,11 @@ class sotrudnik_po_kadram: public rabotnik                    //одиночное наслед
 			     info_pretendenty(string *f, string *v, char* kat, int op);
 				 void show (info_pretendenty *i_p) 
 				    {
-				    	cout<< "Информация о претендете на место:" << endl;
-				    	cout<< "Имя: " << FIO << endl;
-				    	cout<< "Интересующая вакансия" << vakansiy << endl;
-				    	cout << "Категория квалификации" << kategoriy[0] << endl;
-				    	cout << "Опыт в данной сфере "  << opyt_ << endl;
+				    	cout<< "РРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїСЂРµС‚РµРЅРґРµС‚Рµ РЅР° РјРµСЃС‚Рѕ:" << endl;
+				    	cout<< "РРјСЏ: " << FIO << endl;
+				    	cout<< "РРЅС‚РµСЂРµСЃСѓСЋС‰Р°СЏ РІР°РєР°РЅСЃРёСЏ" << vakansiy << endl;
+				    	cout << "РљР°С‚РµРіРѕСЂРёСЏ РєРІР°Р»РёС„РёРєР°С†РёРё" << kategoriy[0] << endl;
+				    	cout << "РћРїС‹С‚ РІ РґР°РЅРЅРѕР№ СЃС„РµСЂРµ "  << opyt_ << endl;
 					}
 		
 		 void spisok (int size)
@@ -106,7 +106,7 @@ class manager: public rabotnik
 			 };
 		void info()
 		     {
-		     	class produc                                                       // локальный класс
+		     	class produc                                                       // Р»РѕРєР°Р»СЊРЅС‹Р№ РєР»Р°СЃСЃ
 		     	{
 		     		private:
 		     			string name_prod;
@@ -118,7 +118,7 @@ class manager: public rabotnik
 		     			void reshenie (produc *pr)
 		     			    {
 		     			       if (pr->pribyl >=10000 && strcmp(pr->otzyv,"good"))
-		     			           cout << "Продукт '"  << name_prod << "' c хорошей репутацией" ;
+		     			           cout << "РџСЂРѕРґСѓРєС‚ '"  << name_prod << "' c С…РѕСЂРѕС€РµР№ СЂРµРїСѓС‚Р°С†РёРµР№" ;
 							};
 					     
 					
@@ -131,7 +131,7 @@ class manager: public rabotnik
 };     
 
 
-class nachalnik:public manager, public sotrudnik_po_kadram                                     //множественное наследование
+class nachalnik:public manager, public sotrudnik_po_kadram                                     //Г¬Г­Г®Г¦ГҐГ±ГІГўГҐГ­Г­Г®ГҐ Г­Г Г±Г«ГҐГ¤Г®ГўГ Г­ГЁГҐ
 {
 	private:
 		int nach_zp;
@@ -149,7 +149,7 @@ class nachalnik:public manager, public sotrudnik_po_kadram                      
 			 
 		void otchet ()
 		    {
-		    	cout << "Представленная продукция на рынке:" << endl;
+		    	cout << "РџСЂРµРґСЃС‚Р°РІР»РµРЅРЅР°СЏ РїСЂРѕРґСѓРєС†РёСЏ РЅР° СЂС‹РЅРєРµ:" << endl;
 		    	info() ;
 			};	 
 
