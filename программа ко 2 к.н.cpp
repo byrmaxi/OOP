@@ -131,7 +131,7 @@ class manager: public rabotnik
 };     
 
 
-class nachalnik:public manager, public sotrudnik_po_kadram                                     //ìíîæåñòâåííîå íàñëåäîâàíèå
+class nachalnik:public manager, public sotrudnik_po_kadram                                     //множественное наледование
 {
 	private:
 		int nach_zp;
