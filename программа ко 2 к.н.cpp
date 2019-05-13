@@ -124,7 +124,24 @@ class manager: public rabotnik
 					
 				};
 				
-				produc pr;
+				int size;
+				cout << "Ââåäèòå êîëè÷åñòâî ïðîäóêöèè : ";
+				cin >> size;
+				produc pr[size];
+				for (int i=0; i<size; i++)
+				    {
+				    	string np;
+				    	int pr;
+				    	char ot [30];
+				    	cin >> np;
+					    cin >> pr;
+					    gets(ot); 
+					    pr[i](np,pr,ot);
+					}
+				for (inti=0; i<size; i++)
+				    {
+				    	reshenie (*pr[i]);
+					}	
 				
 			 };
 	
