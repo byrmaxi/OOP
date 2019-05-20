@@ -182,7 +182,7 @@ int main()
 	 nachalnik pr;
 	 pr.otchet();
 	 
-	 manager mn('Vladislav'; 5; 5);
+	 manager mn('Vladislav', 5, 5);
 	 mn.info;
          mn.show_opyt();
          mn.show_progyly();
