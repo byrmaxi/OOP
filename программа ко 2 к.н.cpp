@@ -182,8 +182,11 @@ int main()
 	 nachalnik pr;
 	 pr.otchet();
 	 
-	 manager mn;
+	 manager mn('Vladislav'; 5; 5);
 	 mn.info;
+         mn.show_opyt();
+         mn.show_progyly();
+         cout<< " Зарплата менеджера << mn.zarplatar();
 	 
 	 sotrudnik_po_kadram spk;
 	 
